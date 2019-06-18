@@ -22,7 +22,7 @@
 - Pure functions
 - Callbacks
 - Promises
-- Built-in Methods(arrays) forEach, map, filter, find, every, some, reduce  @done(DONE)
+- Built-in Methods(arrays) forEach, map, filter, find, every, some, reduce
 - Built-in Methods(objects, strings, numbers)
 - Ajax and Server API calls
 - Generators & async functions
@@ -37,14 +37,14 @@
 - Typescript and/or Flow
 - GraphQL
 - Lodash
-– Css pre-processors: sass, less
-– Compilers: babel
-– Linting: eslint, pretiffier
-– Editors: vscode, atom, sublime
-– Code management tools: github
+- Css pre-processors: sass, less
+- Compilers: babel
+- Linting: eslint, pretiffier
+- Editors: vscode, atom, sublime
+- Code management tools: github
 - Package management tools: npm, yarn
 - Bundling tools: Webpack, gulp
-– Atomic design
+- Atomic design
 - Design systems and storybook
 
 ## 3. Learn about testing
