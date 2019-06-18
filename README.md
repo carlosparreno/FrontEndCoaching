@@ -27,25 +27,24 @@
 - Ajax and Server API calls
 - Generators & async functions
 
+
 ## 2. Learn the main frameworks, libraries and tools
 
-- React
-- Angular
-- Vue
-- Redux
-- GraphQl
+- Main Frameworks/libraries: React, Angular and Vue
 - Typescript and/or Flow
+- Redux
 - GraphQL
 - Lodash
 - Css pre-processors: sass, less
 - Compilers: babel
 - Linting: eslint, pretiffier
 - Editors: vscode, atom, sublime
-- Code management tools: github
-- Package management tools: npm, yarn
+- Code management tools: git and github
+- Package management tools: npm and yarn
 - Bundling tools: Webpack, gulp
-- Atomic design
+- Atomic design (Metodology)
 - Design systems and storybook
+
 
 ## 3. Learn about testing
 
