@@ -10,10 +10,10 @@ We are going to create our first and very basic react app. We will see the most 
 - Bootstrap a react app with `create-react-app`
 - React functional (aka stateless) component
 - Props: required, optional and default props
+- Use Event Handlers with React
 - React stateful component
 - Use component state. Note: In 2019, we recomend using hooks instead (useState hook)
 - Style React Components with className and css
-- Use Event Handlers with React
 
 1. Install [create-react-app](https://github.com/facebook/create-react-app):
 
@@ -130,3 +130,44 @@ For more information about `prop-types` see the [react documentation](https://re
 7. Update the Label component in App.js
 
 - Replace `<Label />` by `<Label text="This is our first component, named Label" />`
+
+8. Let's create a second component called `Button`, here we'll see optional props, and event handlers
+
+- In `/src/components` create the file `Button.js`
+- Add the following content to `Button.js`
+
+```
+import React from "react";
+import PropTypes from "prop-types";
+
+const Button = props => (
+  <button onClick={props.action}>{props.children}</button>
+);
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
+  action: PropTypes.func
+};
+
+Button.defaultProps = {
+  action: () => {
+    console.log("No action assigned to this component");
+  }
+};
+
+export default Button;
+```
+
+We have created a Button component that receives two props:
+
+- children, a string used to give the button an action name.
+- action, to pass a function to the onClick event.
+
+Note that the action prop is optional, hence we added a default function in dafualtProps.
+
+9. Update App.js:
+
+- Add `import Button from "./components/Button";` below the imports.
+- Add `<Button>Add</Button>` below Label.
+
+Test your app by clicking the button and checking the console. The default message "No action assigned to this component" should be displayed.
