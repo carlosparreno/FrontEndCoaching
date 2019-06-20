@@ -1,6 +1,7 @@
 import React from "react";
 import Label from "../components/Label";
 import Button from "../components/Button";
+import "../css/Counter.css";
 
 class Counter extends React.Component {
   constructor(props) {
@@ -14,9 +15,11 @@ class Counter extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="counter-container">
         <Label text={`This is a counter: ${this.state.count}`} />
-        <Button action={this.incrementCount}>Increment count</Button>
+        <Button className="counter-button" action={this.incrementCount}>
+          Increment count
+        </Button>
       </div>
     );
   }

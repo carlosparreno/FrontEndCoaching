@@ -1,0 +1,10 @@
+.counter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-button {
+  height: 40px;
+  font-size: 20px;
+  margin: 12px;
+}

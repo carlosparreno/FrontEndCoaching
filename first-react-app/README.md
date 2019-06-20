@@ -234,3 +234,93 @@ function App() {
 
 export default App;
 ```
+
+See the result on http://localhost:3000/
+
+12. Let's now add some styling to our solution by using the `className` prop that the `html` tags have built-in in React.
+
+- We want to add styling to the counter container. So let's add a `className="counter-container"` to our `<div>` container.
+
+- We want to add styling to our button, so we will add `className="counter-button"` to our `<Button>`
+
+- Now we need to create the css, to do so let's create a file named `src/css/Counter.css` with the following content:
+
+```
+.counter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.counter-button {
+  height: 40px;
+  font-size: 20px;
+  margin: 12px;
+}
+```
+
+- And now let's import it into our Counter.js file: `import "../css/Counter.css";`.
+
+- The Counter.js now will look like follows:
+
+```
+import React from "react";
+import Label from "../components/Label";
+import Button from "../components/Button";
+import "../css/Counter.css";
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div className="counter-container">
+        <Label text={`This is a counter: ${this.state.count}`} />
+        <Button className="counter-button" action={this.incrementCount}>
+          Increment count
+        </Button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+Test the result on http://localhost:3000/
+
+Note: We can see the container styling working but the button styling is not. This is because the `Button` component is not an `html` tag with the `className` built-in prop. We need to add that ourselves.
+
+- After doing that, the `Button` component will look as follows:
+
+```
+import React from "react";
+import PropTypes from "prop-types";
+
+const Button = props => (
+  <button className={props.className} onClick={props.action}>
+    {props.children}
+  </button>
+);
+
+Button.propTypes = {
+  children: PropTypes.string.isRequired,
+  action: PropTypes.func,
+  className: PropTypes.string
+};
+
+Button.defaultProps = {
+  action: () => {
+    console.log("No action assigned to this component");
+  },
+  className: undefined
+};
+
+export default Button;
+```
