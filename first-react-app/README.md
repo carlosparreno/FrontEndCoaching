@@ -52,7 +52,7 @@ For more information consult the [create-react-app](https://github.com/facebook/
 > cd first-react-app
 > code .
 
-Note: To run the above command and be able to launch the project from command line follow these [instructions](https://code.visualstudio.com/docs/editor/command-line)
+Note: To run the above command and be able to launch the project from command line follow these [instructions](https://code.visualstudio.com/docs/editor/command-line).
 
 > npm start
 
