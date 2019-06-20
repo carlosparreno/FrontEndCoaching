@@ -9,11 +9,11 @@ We are going to create our first and very basic react app. We will see the most 
 
 - Bootstrap a react app with `create-react-app`
 - React functional (aka stateless) component
-- React stateful component
 - Props: required, optional and default props
+- React stateful component
+- Use component state. Note: In 2019, we recomend using hooks instead (useState hook)
 - Style React Components with className and css
 - Use Event Handlers with React
-- Use component state. Note: In 2019, we recomend using hooks instead (useState hook)
 
 1. Install [create-react-app](https://github.com/facebook/create-react-app):
 
@@ -101,3 +101,32 @@ export default Label;
   ```
 
 See the result on http://localhost:3000/
+
+6. Add text prop to customize the Label component
+
+- Install `prop-types` to define the types of our props
+
+> npm install --save prop-types
+
+- Replace the content in Label.js by the following content:
+
+```
+import React from "react";
+import PropTypes from "prop-types";
+
+const Label = props => <label>{props.text}</label>;
+
+Label.propTypes = {
+  text: PropTypes.string.isRequired
+};
+
+export default Label;
+```
+
+Note: We create the stateless Label component that receives props and display within the `<label>` tag the `text` prop. Text prop is a string and a required prop as defined with PropTypes.
+
+For more information about `prop-types` see the [react documentation](https://reactjs.org/docs/typechecking-with-proptypes.html)
+
+7. Update the Label component in App.js
+
+- Replace `<Label />` by `<Label text="This is our first component, named Label" />`

@@ -1,7 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Label() {
-  return <label>This is our first component, named Label</label>;
-}
+const Label = props => <label>{props.text}</label>;
+
+Label.propTypes = {
+  text: PropTypes.string.isRequired
+};
 
 export default Label;

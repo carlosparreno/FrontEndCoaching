@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Label />
+        <Label text="This is our first component, named Label" />
       </header>
     </div>
   );
