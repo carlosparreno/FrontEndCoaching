@@ -171,3 +171,42 @@ Note that the action prop is optional, hence we added a default function in dafu
 - Add `<Button>Add</Button>` below Label.
 
 Test your app by clicking the button and checking the console. The default message "No action assigned to this component" should be displayed.
+
+10. Let's create a statefull component:
+
+- In `src/components/` create a file named `Counter.js`
+- Add the following content to `src/components/Counter`:
+
+```
+import React from "react";
+import Label from "../components/Label";
+import Button from "../components/Button";
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+  }
+
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <Label text={`This is a counter: ${this.state.count}`} />
+        <Button action={this.incrementCount}>Increment count</Button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+We created a stateful component. Note that it has a render method, which is mandatory for every stateful component and must return a JSX structure.
+
+The Counter component has a constructor that defines the state of the app, defaulted to 0: { count: 0 }, and also a method named `incrementCount` that will increment the state by 1.
+
+The render method contains a `Label` with the count passed in the `text` prop and a `Button` that will trigger the `incrementCount` method passed in the `action` prop.
