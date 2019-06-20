@@ -17,7 +17,7 @@ We are going to create our first and very basic react app. We will see the most 
 
 1. Install [create-react-app](https://github.com/facebook/create-react-app):
 
-> npm i -g create-react-app
+> npm install -g create-react-app
 
 2. Create a react app:
 
@@ -25,6 +25,7 @@ We are going to create our first and very basic react app. We will see the most 
 
 You will get a react web app with the following scafolding:
 
+```
 my-app
 ├── README.md
 ├── node_modules
@@ -42,6 +43,7 @@ my-app
 ├── index.js
 ├── logo.svg
 └── serviceWorker.js
+```
 
 For more information consult the [create-react-app](https://github.com/facebook/create-react-app) documentation.
 
@@ -54,7 +56,7 @@ Note: To run the above command and be able to launch the project from command li
 
 > npm start
 
-Our first app should be running on `http://localhost:3000/`
+Our first app should be running on http://localhost:3000/
 
 4. Let's create our first component. It'll be a functional/stateless component.
 
@@ -76,8 +78,8 @@ export default Label;
 
 - Open App.js
 - Import our component, add at the end of the existing `import` statements the following:
-  ```import Label from "./components/Label"
-
+  ```
+  import Label from "./components/Label"
   ```
 - Delete the following content:
   ```
@@ -98,4 +100,4 @@ export default Label;
   <Label />
   ```
 
-See the result on `http://localhost:3000/`
+See the result on http://localhost:3000/
