@@ -210,3 +210,27 @@ We created a stateful component. Note that it has a render method, which is mand
 The Counter component has a constructor that defines the state of the app, defaulted to 0: { count: 0 }, and also a method named `incrementCount` that will increment the state by 1.
 
 The render method contains a `Label` with the count passed in the `text` prop and a `Button` that will trigger the `incrementCount` method passed in the `action` prop.
+
+11. Let's use our new component in App.js.
+
+- Replace the App.js content by the following:
+
+```
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Counter from "./components/Counter";
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <Counter />
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
