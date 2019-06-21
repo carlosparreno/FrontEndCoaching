@@ -5,7 +5,7 @@ Pre-requirements:
 - Install [nodejs](https://nodejs.org/en/)
 - Install an editor, I recommend [VSCode](https://code.visualstudio.com/)
 
-We are going to create our first and very basic react app. We will see the most basic concepts:
+We are going to create our first react app. We will see the following basic concepts:
 
 - Bootstrap a react app with `create-react-app`
 - React functional (aka stateless) component
