@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./components/Button";
 import "./App.css";
 
@@ -6,6 +6,11 @@ function App() {
   const [status, setStatus] = useState("Status: Initial");
   const [cookieName, setCookieName] = useState("-");
   const [cookieValue, setCookieValue] = useState("-");
+  const [cookies, setAllCookies] = useState(null);
+
+  useEffect(() => {
+    setAllCookies(document.cookie.split(";"));
+  }, []);
 
   const createCookie = (cookieName, cookieValue) => {
     // To create or store a new cookie, assign a name=value string to this property
@@ -40,6 +45,34 @@ function App() {
     );
   };
 
+  const readCookie = cookieName => {
+    // document.cookie property simply returns a string containing a
+    // semicolon and a space separated list of all cookies
+    const allCookies = document.cookie.split(";");
+    setAllCookies(allCookies);
+
+    for (let i = 0; i < allCookies.length; i++) {
+      const cookiePair = allCookies[i].split("=");
+      // Removing whitespace at the beginning of the cookie name
+      if (cookieName === cookiePair[0].trim()) {
+        setCookieStatus(
+          `Status: Cookie ${cookieName} was read with value = ${decodeURIComponent(
+            cookiePair[1]
+          )}`,
+          cookieName,
+          decodeURIComponent(cookiePair[1])
+        );
+        return decodeURIComponent(cookiePair[1]);
+      }
+    }
+    setCookieStatus(
+      `Status: Cookie ${cookieName} doesn't exist`,
+      "null",
+      "null"
+    );
+    return null;
+  };
+
   const createCookieWithEncodeURIComponent = (cookieName, cookieValue) => {
     // By default, the lifetime of a cookie is the current browser session
     // To remain after the browser session, specify its lifetime (in seconds) with a max-age attribute
@@ -68,32 +101,30 @@ function App() {
     setCookieValue(cookieValue);
   };
 
+  // path, domain
+
   return (
     <div>
       <header className="App-header">
         <h1>Cookies App</h1>
       </header>
       <div className="main-container">
-        <div className="margin">
-          <h3>{status}</h3>
-        </div>
+        <h3>{status}</h3>
         <Button
           text="Create Cookie"
-          action={() => createCookie("carlos-test", "carlosValue")}
+          action={() => createCookie("MyTest", "MyValue")}
         />
         <Button
           text="Update Cookie"
-          action={() => updateCookie("carlos-test", "UpdatedValue")}
+          action={() => updateCookie("MyTest", "UpdatedValue")}
         />
-        <Button
-          text="Delete Cookie"
-          action={() => deleteCookie("carlos-test")}
-        />
+        <Button text="Delete Cookie" action={() => deleteCookie("MyTest")} />
+        <Button text="Read Cookie" action={() => readCookie("MyTest")} />
         <Button
           text="Create Cookie with encodeURIComponent for 'Value with semicolons; commas, or spaces"
           action={() =>
             createCookieWithEncodeURIComponent(
-              "carlos-test-encodeURIComponent",
+              "Mytest-encodeURIComponent",
               "Value with semicolons; commas, or spaces"
             )
           }
@@ -102,8 +133,8 @@ function App() {
           text="Create Cookie with lifetime using 'max-age' of 3 hours (3 * 60 * 60 seconds)"
           action={() =>
             createCookieWithMaxAge(
-              "carlos-test-max-age",
-              "carlosValue-max-age",
+              "Mytest-max-age",
+              "MyValue-max-age",
               3 * 60 * 60
             )
           }
@@ -112,8 +143,8 @@ function App() {
           text="Create Cookie with lifetime 'expires' and a date Thu, 18 Jul 2086 00:00:00"
           action={() =>
             createCookieWithExpires(
-              "carlos-test-expires",
-              "carlosValue-expires",
+              "Mytest-expires",
+              "MyValue-expires",
               "Thu, 18 Jul 2086 00:00:00"
             )
           }
@@ -128,6 +159,18 @@ function App() {
           <b>{"CookieValue: "}</b>
           {cookieValue}
         </label>
+        <br />
+        <br />
+        <select>
+          {cookies &&
+            cookies.map(cookie => {
+              return (
+                <option key={cookie} value={cookie}>
+                  {cookie}
+                </option>
+              );
+            })}
+        </select>
       </div>
     </div>
   );
