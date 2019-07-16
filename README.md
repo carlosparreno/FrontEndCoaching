@@ -43,7 +43,7 @@ Note: This is a super complete course to also get a certification, to get starte
 - Linting: eslint, pretiffier
 - Editors: vscode, atom, sublime
 - Code management tools: git and github [Udemy Git and Github free course](https://www.udemy.com/git-started-with-github/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-9pqh6B2myu5GBcn3TCGDyQ&LSNPUBID=JVFxdTr9V80)
-- Package management tools: npm and yarn [Udemy NPM free course]
+- Package management tools: npm and yarn [Udemy NPM free course](https://www.udemy.com/npm-mastering-the-basics/)
 - Bundling tools: Webpack, gulp
 - Atomic design (Metodology)
 - Design systems and storybook
