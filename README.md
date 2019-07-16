@@ -8,9 +8,13 @@
 ## 1. Learn the basics: HTML, CSS and JS fundamentals
 
 - If you are new in the front end world this is a superb reading, if you are not this is still something good to read, scan or have for references: [Front-end Developer Handbook 2019 by Frontend Masters](https://frontendmasters.com/books/front-end-handbook/2019)
+
 - HTML basics
 - CSS basics
 - JS basics
+
+I recommend to learn the basics for free at [Freecodecamp](https://learn.freecodecamp.org/). 
+Note: This is a super complete course to also get a certification, to get started you can go to the basic HTML, CSS and JS activities.
 
 ### As Part of the JS fundamentals:
 
