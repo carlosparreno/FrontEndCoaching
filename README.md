@@ -59,4 +59,4 @@
 - Accessibility
 - Internationalization
 - PWAs
-- (Developer Roadmap)[www.freecodecamp.org/news/2019-web-developer-roadmap/]
+- [Developer Roadmap](www.freecodecamp.org/news/2019-web-developer-roadmap/)
